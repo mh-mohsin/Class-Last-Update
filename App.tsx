@@ -1379,7 +1379,10 @@ const App: React.FC = () => {
                   <label className="text-[10px] font-black text-indigo-400 uppercase tracking-widest ml-1">Serial Number</label>
                   <input required type="number" value={formData.class_no || 1} onChange={e => setFormData({...formData, class_no: parseInt(e.target.value)})} className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner" />
                 </div>
-                <input type="date" required value={formData.date || ''} onChange={e => setFormData({...formData, date: e.target.value})} className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner" />
+                <div className="space-y-3">
+                  <label className="text-[10px] font-black text-indigo-400 uppercase tracking-widest ml-1">Publication Date</label>
+                  <input required value={formData.date || ''} onChange={e => setFormData({...formData, date: e.target.value})} className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner" />
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
