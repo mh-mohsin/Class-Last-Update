@@ -1379,17 +1379,23 @@ const App: React.FC = () => {
                   <label className="text-[10px] font-black text-indigo-400 uppercase tracking-widest ml-1">Serial Number</label>
                   <input required type="number" value={formData.class_no || 1} onChange={e => setFormData({...formData, class_no: parseInt(e.target.value)})} className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner" />
                 </div>
-                <div className="space-y-3">
+                import { useRef } from "react";
+
+const dateRef = useRef(null);
+
+<div className="space-y-3">
   <label className="text-[10px] font-black text-indigo-400 uppercase tracking-widest ml-1">
     Publication Date
   </label>
 
   <input 
+    ref={dateRef}
     type="date"
     required 
     value={formData.date || ''} 
+    onClick={() => dateRef.current?.showPicker()}
     onChange={e => setFormData({...formData, date: e.target.value})} 
-    className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner" 
+    className="w-full p-5 bg-slate-950 rounded-[1.5rem] border border-white/5 focus:border-indigo-500 outline-none transition-all font-bold text-white shadow-inner cursor-pointer" 
   />
 </div>
               </div>
